@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
-    subtitle: "Welcome on my portfolio page! I’m passionate about exploring how AI can solve real business challenges — from saving time and reducing costs with automating tedious processes to improving knowledge sharing workflows."
+    subtitle: "Welcome to my portfolio! I am interested in finding and implementing practical A.I. and automation applications that solve real business challenges. You will find here some of the projects that I have built."
     imageUrl: "/images/TarekProfile.png"
     imageWidth: 150
     imageHeight: 150

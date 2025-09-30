@@ -1,5 +1,5 @@
 ---
-title: "Reddit n8n automation"
+title: "n8n automation"
 date: 2025-09-28
 # weight: 1
 # aliases: ["/first"]
@@ -28,15 +28,14 @@ cover:
     hidden: false # only hide on current single page
 ---
 
-# AI-Powered Intelligence from Financial Communities
+# n8n Workflow to find Fintech issues reported on Reddit
 
-**Transforming scattered community discussions into a structured stream of actionable intelligence.**
+In the fast-paced world of financial services, critical user insights and emerging issues are often buried in scattered community discussions across Reddit and other forums. Manually tracking these conversations is time-consuming.
+This project demonstrates a scalable solution: an automated **n8n workflow** that continuously scans key financial subreddits, uses AI to extract user-reported issues, and delivers summarized, actionable insights directly to **google sheets**.
 
-In the fast-paced world of financial services, critical user insights and emerging issues are often buried in scattered community discussions across Reddit and other forums. Manually tracking these conversations is time-consuming, inconsistent, and leaves valuable signals undiscovered.
+## How It Works: From Data Chaos to Structured Insight
 
-This project demonstrates a scalable solution: an automated **n8n workflow** that continuously scans key financial subreddits, uses AI to extract user-reported issues, and delivers summarized, actionable insights directly to a structured knowledge base.
-
-## 🚀 How It Works: From Data Chaos to Structured Insight
+![n8n and Reddit Workflow](/images/n8nWorkflow.png)
 
 The system automates the entire intelligence-gathering pipeline, from raw posts to analyzed trends.
 
@@ -51,10 +50,7 @@ The system automates the entire intelligence-gathering pipeline, from raw posts 
     *   **Merge & Deduplicate:** Combines results from all sources and removes duplicate posts.
     *   **Relevance Filtering:** Applies smart filters to focus only on the most valuable content.
 
-<div align="center" style="background-color: #e7f3ff; padding: 15px; border-radius: 5px; border-left: 4px solid #1890ff;">
-  <strong>🎯 Precision Targeting</strong><br>
-  The workflow filters for posts from the last 72 hours that contain keywords like "issue," "problem," or "solution," ensuring the analysis focuses on actionable discussions.
-</div>
+  > The workflow filters for posts from the last 72 hours that contain keywords like "issue," "problem," or "solution," ensuring the analysis focuses on actionable discussions.
 
 3.  **AI-Powered Analysis & Summarization**
     Each filtered post is sent to **Anthropic's Claude model** for deep analysis, where it:
@@ -69,12 +65,10 @@ The system automates the entire intelligence-gathering pipeline, from raw posts 
     *   An easily shareable resource for product, support, and strategy teams.
     *   A growing historical knowledge base for trend analysis.
 
-## 🛠️ Technical Architecture
-
-This project showcases the integration of modern workflow automation and AI to solve a real-world business intelligence challenge.
+## Technical Architecture
 
 **Automation & Orchestration**
-*   **n8n:** Serves as the core workflow engine, orchestrating the entire pipeline from data collection to storage with robust error-handling and scheduling.
+*   **n8n:** Serves as the core workflow engine, orchestrating the entire pipeline.
 
 **Data Sources & AI**
 *   **Reddit API:** Provides direct access to real-time discussions from targeted subreddits.
@@ -83,12 +77,8 @@ This project showcases the integration of modern workflow automation and AI to s
 **Storage & Output**
 *   **Google Sheets:** Acts as the persistent storage layer, offering a familiar and collaborative interface for end-users to access the results.
 
-## 💡 The "Why": Strategic Impact
-
-This project is more than a technical script; it's a force multiplier for business teams. It showcases:
+## Strategic Impact
 
 *   **Product & Market Intelligence:** Provides a systematic way to discover common user frustrations, feature requests, and unmet needs in the market.
-*   **Efficiency & Scale:** Automates a previously manual and tedious process, freeing up human analysts for higher-level strategy.
+*   **Efficiency & Scale:** Automates a previously manual and tedious process, freeing up human analysts for more important tasks.
 *   **Proactive Problem-Solving:** Allows companies to identify and respond to emerging issues before they become widespread, improving customer satisfaction and retention.
-
-**Explore the Code:** The complete n8n workflow and configuration details are available in the [project repository](https://github.com/TAMustafa/Reddit-Finance-Monitor).
