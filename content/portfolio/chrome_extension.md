@@ -69,4 +69,4 @@ The idea for this tool wasn't born in a vacuum, it came from my own job search. 
 
 I wanted instant, concrete insight into how well my resume actually aligned with a job's requirements. This tool transforms the manual, tedious process of tailoring a CV into a quick, data-backed step, giving every job seeker the power to immediately see and fix the gaps between their experience and the role they want. It’s a solution built by a job seeker, for job seekers.
 
-> If you are interested, here is the link to the Chrome Extension: [Resume Checker](https://chromewebstore.google.com/detail/resume-checker/klmabmnjfooipddpbhggjpikmkachicn?hl=en-US&utm_source=ext_sidebar)
+> If you are interested, here is the github link to the [Resume Checker](https://github.com/TAMustafa/ResumeCheckerAPI)
