@@ -31,6 +31,8 @@ cover:
 # AI-Powered Freelancer Payout Crew
 This Freelancer Payout Crew implemented using [CrewAI](https://crewai.ai), is a **multi-agent AI system** that automates the complete lifecycle of freelancer payments while aiming for regulatory compliance. It processes payout requests through six specialized agents, each responsible for a specific aspect of the payment flow.
 
+---
+
 ## The Business Challenge
 Managing payments for a global freelance workforce is a complex, manual, and time-consuming operation. Finance teams are burdened with:
 
@@ -42,8 +44,12 @@ Managing payments for a global freelance workforce is a complex, manual, and tim
 
 **Audit Headaches**: Creating a clear, defensible audit trail for regulators is a time-consuming manual process.
 
+---
+
 ## Technical Architecture at a Glance
 This automation system is built with CrewAI and orchestrates a sequential workflow where each specialist agent hands off its work to the next. All data is validated with type-safe **pydantic BaseModel** models, ensuring reliability and output consistency. It was built with a modular design in mind so that new payment methods or compliance rules can be added without disrupting the core system.
+
+---
 
 ## Meet the CrewAI Team:
 **The Data Validator**: Ingests and cleans possibly messy payout data, ensuring it meets strict standards before anything is processed.
@@ -60,12 +66,16 @@ This automation system is built with CrewAI and orchestrates a sequential workfl
 
 ![CrewAI Agent Flow](/images/AgentFlow.png)
 
+---
+
 ## Key Business Value & Features
 - Expected large reduction in manual effort: The entire process, from data ingestion to payment execution, is fully automated.
 - Build with compliance in mind: Built-in checks for AML, sanctions, and data protection (GDPR) to reduce regulatory risk.
 - Cost Optimization: Automated FX rate comparison and smart payment rail selection to find the best option for lower transaction costs.
 - Full Auditability: Every decision is logged with a "who, what, when, and why," making compliance reporting simple and fast.
 - Future-Proof & Extensible: The system is built to easily incorporate new payment providers, compliance rules, and even support emerging standards like **Google's Agent Payment Protocol (AP2)** for interoperability with other AI financial systems.
+
+---
 
 ## Summary of System Value
 | Aspect | Feature | Business Value |

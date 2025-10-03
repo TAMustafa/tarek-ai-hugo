@@ -30,9 +30,9 @@ cover:
 
 # Resume Checker - Chrome Extension
 
-**Bridging the gap between your resume and the job requirements.**
-
 In today's competitive job market, it's difficult to know if your resume truly meets the needs of a specific job description. I built a Chrome extension to solve this  pain point. This tool gives job seekers instant, actionable feedback by identifying exactly how well their provided resume matches a chosen job description in order to make improvements and increase their chances of landing an interview.
+
+---
 
 ## What It Does
 
@@ -49,6 +49,8 @@ The system provides a clear, visual breakdown, including:
 
 > **Instant Insight** A strategic, data-backed method for resume tailoring. Stop guessing what the job requires—get instant insights into how well your CV matches the job description in seconds.
 
+---
+
 ## Technical Deep Dive
 
 ### **Frontend & Interfaces**
@@ -62,6 +64,7 @@ The system provides a clear, visual breakdown, including:
 ### **Deployment**
 *   **Containerization:** The entire application is **packaged with Docker** for consistent environments and easy deployment.
 
+---
 
 ## Project Motivation: Built from Experience
 

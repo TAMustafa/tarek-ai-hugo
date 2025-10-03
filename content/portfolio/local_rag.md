@@ -34,11 +34,15 @@ In today’s data-driven world, organizations are caught between two competing n
 
 With this project I tackles this challenge by building a fully local **Retrieval-Augmented Generation (RAG)** chat application. It combines local Large Language Models (LLMs) with a local data retrieval pipeline.
 
+---
+
 ## Complete Data Sovereignty with Local RAG
 
 This project is a practical demonstration of a complete, self-contained RAG pipeline that enables people to use AI-driven knowledge access without compromising data security or privacy.
 
 > **Context-Aware and Verifiable Answers**: The **RAG pipeline** retrieves the most relevant information from a local running **ChromaDB** vector database and provides it as context to the local LLM via **Ollama**. This ensures responses are precise, contextualized, and include clear citations to their source documents. This all while the data remains locally.
+
+---
 
 ## Technical Architecture & Implementation
 
@@ -60,6 +64,8 @@ The system follows a standard yet powerful RAG pattern, executed entirely on-pre
 2.  **Vectorization**: Text chunks are converted into numerical vectors (embeddings) and stored in the local ChromaDB instance .
 3.  **Retrieval & Generation**: User queries are embedded and used to find relevant text chunks. These chunks are passed as context to the local LLM, which synthesizes a final, grounded answer .
 
+---
+
 ## A Practical use case
 
 Imagine an HR employee needs to find a specific detail in the company's 100-page policy handbook. Instead of manual browsing:
@@ -68,6 +74,8 @@ Imagine an HR employee needs to find a specific detail in the company's 100-page
 3.  The local LLM generates a concise, easy-to-understand answer, directly citing the sections and page numbers of the source material.
 
 This workflow saves time, drastically improves answer accuracy, and builds institutional trust by making the AI's reasoning transparent .
+
+---
 
 ## Why This Project Matters
 

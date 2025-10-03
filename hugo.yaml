@@ -13,14 +13,18 @@ minify:
   disableXML: true
   minifyOutput: true
 
+services:
+  googleAnalytics:
+    ID: G-CVGVD9NFWQ
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: tarek ai portfolio
-  description: "Tarek to update text"
+  description: Portfolio to show some of the projects that I have built.
   keywords: [Tarek, Portfolio, AI, CrewAI, Langchain, LLM, FastAPI, Pyhton]
   author: Tarek Mustafa
   images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
+  DateFormat: January 2, 2006
   defaultTheme: light # dark, light, auto
   disableThemeToggle: false
 
@@ -43,12 +47,12 @@ params:
   assets:
     #disableHLJS: false # to disable highlight.js
     #disableFingerprinting: true
-    favicon: "favicon.ico"
-    favicon16x16: "favicon16x16.ico"
-    favicon32x32: "favicon32x32.ico"
+    favicon: favicon.ico
+    favicon16x16: favicon16x16.ico
+    favicon32x32: favicon32x32.ico
 
   label:
-    text: "tarek ai"
+    text: tarek ai
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -56,8 +60,8 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
-    subtitle: "Welcome to my portfolio! I am interested in finding and implementing practical A.I. and automation applications, that solve real business challenges. You will find here some of the projects that I have built."
-    imageUrl: "/images/TarekProfile.png"
+    subtitle: Welcome to my portfolio! I am interested in finding and implementing practical A.I. and automation applications, that solve real business challenges. You will find here some of the projects that I have built.
+    imageUrl: /images/TarekProfile.png
     imageWidth: 150
     imageHeight: 150
     imageTitle: Tarek Mustafa
@@ -69,20 +73,20 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
+    Title: Hi there \U0001F44B
     Content: Welcome to my blog
 
   socialIcons:
     - name: linkedin
-      url: "https://www.linkedin.com/in/tamustafa/"
+      url: https://www.linkedin.com/in/tamustafa/
     - name: github
-      url: "https://github.com/TAMustafa?tab=repositories"
+      url: https://github.com/TAMustafa?tab=repositories
     - name: cv
-      url: "https://drive.google.com/file/d/1B6h1Bhi5dvCe74gBZ7cpCEOYHo3mxfNt/view?usp=drive_link"
+      url: https://drive.google.com/file/d/1B6h1Bhi5dvCe74gBZ7cpCEOYHo3mxfNt/view?usp=drive_link
 
   analytics:
     google:
-      SiteVerificationTag: "G-CVGVD9NFWQ"
+      SiteVerificationTag: G-CVGVD9NFWQ
 
   cover:
     hidden: false # hide everywhere but not in structured data

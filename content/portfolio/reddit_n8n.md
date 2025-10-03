@@ -33,6 +33,8 @@ cover:
 In the fast-paced world of financial services, critical user insights and emerging issues are often buried in scattered community discussions across Reddit and other forums. Manually tracking these conversations is time-consuming.
 This project demonstrates a scalable solution: an automated **n8n workflow** that continuously scans key financial subreddits, uses AI to extract user-reported issues, and delivers summarized, actionable insights directly to **google sheets**.
 
+---
+
 ## How It Works: From Data Chaos to Structured Insight
 
 ![n8n and Reddit Workflow](/images/n8nWorkflow.png)
@@ -65,6 +67,8 @@ The system automates the entire intelligence-gathering pipeline, from raw posts 
     *   An easily shareable resource for product, support, and strategy teams.
     *   A growing historical knowledge base for trend analysis.
 
+---
+
 ## Technical Architecture
 
 **Automation & Orchestration**
@@ -76,6 +80,8 @@ The system automates the entire intelligence-gathering pipeline, from raw posts 
 
 **Storage & Output**
 *   **Google Sheets:** Acts as the persistent storage layer, offering a familiar and collaborative interface for end-users to access the results.
+
+---
 
 ## Strategic Impact
 
