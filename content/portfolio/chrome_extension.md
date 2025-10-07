@@ -21,7 +21,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/ChromeExtensionBanner.png"
+    image: "/images/ChromeExtensionBanner.webp"
     alt: "Image showing a cartoonish image about a Resume Checker Chrome extension"
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -36,7 +36,7 @@ In today's competitive job market, it's difficult to know if your resume truly m
 
 ## What It Does
 
-![Resume Checker Chrome Extension](/images/resumeChecker.png)
+![Resume Checker Chrome Extension](/images/resumeChecker.webp)
 
 The Resume Checker provides a dual interface for flexibility:
 

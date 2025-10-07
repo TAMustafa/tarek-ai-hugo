@@ -1,6 +1,6 @@
 ---
-title: "Grafana monitoring crew"
-date: 2025-10-03
+title: "Grafana monitoring"
+date: 2025-10-04
 # weight: 1
 # aliases: ["/first"]
 tags: ["CrewAI", "Prometheus", "Grafana", "FastAPI"]
@@ -21,35 +21,26 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/GrafanaCrewAI.png"
+    image: "/images/GrafanaCrewAIBanner.webp"
     alt: "Image showing a cartoonish image about using a Prometheus + CrewAI"
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: false # only hide on current single page
 ---
 
-# AI Augmented monitoring with Prometheus and CrewAI
+# AI enhanced monitoring - Grafana and CrewAI
 
 Monitoring systems have come a long way in helping teams keep an eye on infrastructure. Tools like **Prometheus**, **Grafana**, and **Alertmanager** do a great job of showing metrics, triggering alerts, and providing dashboards. But in many cases, alerts only tell us *that something is wrong*—not *why* it happened or *what to do next*.
 
-To explore how AI could fill this gap, I built a small proof-of-concept that integrates **Prometheus, Alertmanager, Grafana, and CrewAI**. The idea was simple: connect the traditional monitoring flow to AI agents that can help make sense of alerts in a more useful way.
+To explore how AI could fill this gap, I built a small proof-of-concept that integrates **Prometheus, Alertmanager, Grafana, and CrewAI**. The idea: connect the traditional monitoring flow to AI agents that can help make sense of alerts in a more useful way and perform actions based on the alerts.
 
 ---
 
 ## Project Overview
 
-The prototype brings together a few moving parts:
+The prototype simulates the following flow. It’s a barebones setup, but it shows how AI can be woven into existing monitoring pipelines without replacing the tools teams already rely on.
 
-1. A **demo app** generates metrics like CPU usage and response latency.
-2. **Prometheus** scrapes those metrics and checks them against alert rules.
-3. **Alertmanager** sends alerts when thresholds are crossed.
-4. A **CrewAI agent** receives the alerts and adds context.
-5. **Grafana** provides dashboards to visualize everything in real time.
-
-**IMAGE HERE**
-
-
-It’s a barebones setup, but it shows how AI can be woven into existing monitoring pipelines without replacing the tools teams already rely on.
+![Promotheus and CrewAI](/images/GrafanaMonitoring.webp)
 
 ---
 
@@ -79,7 +70,7 @@ For this experiment, I set up a couple of basic agents inside CrewAI:
 * **Alert Analyzer** – looks at alerts and tries to add context (severity, possible causes, recommended next steps).
 * **Incident Responder** – produces a simple report of what happened and what actions could be considered.
 
-This could be extended further with agents that check log data, compare incidents against historical patterns, or even carry out safe automated actions such as restarting a service.
+> This could be extended further with agents that check log data, compare incidents against historical patterns, or even carry out safe automated actions such as restarting a service.
 
 ---
 
@@ -97,4 +88,4 @@ Putting this MVP together tought me a few things:
 
 This is still just an early experiment. There are many ways it could be extended by connecting to log systems, adding predictive analysis or building in safe remediation options using **tools**. But even in its basic form I believe it highlights how monitoring can shift from reactive notifications to something more proactive and supportive.
 
-> If you are interested, here is the github link to [Grafana monitoring and Agents]()
+> If you are interested, here is the github link to [Grafana monitoring](https://github.com/TAMustafa/Grafana-monitoring)

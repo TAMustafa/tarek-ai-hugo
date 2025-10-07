@@ -21,7 +21,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/LocalRagBanner.png"
+    image: "/images/LocalRagBanner.webp"
     alt: "Image showing a cartoonish image about using a secure local RAG"
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -46,7 +46,7 @@ This project is a practical demonstration of a complete, self-contained RAG pipe
 
 ## Technical Architecture & Implementation
 
-![RAG Query Processing](/images/ragQueryProcessing.png)
+![RAG Query Processing](/images/ragQueryProcessing.webp)
 
 This full-stack application was built with a modern, local-first tech stack.
 

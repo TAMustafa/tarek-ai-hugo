@@ -21,7 +21,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/FreelancePaymentBanner.png"
+    image: "/images/FreelancePaymentBanner.webp"
     alt: "Image showing a cartoonish image about AI automated Freelance payments"
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -64,7 +64,7 @@ This automation system is built with CrewAI and orchestrates a sequential workfl
 
 **The Auditor**: Meticulously records every action, decision, and reason, generating a complete audit trail that is ready for regulatory review.
 
-![CrewAI Agent Flow](/images/AgentFlow.png)
+![CrewAI Agent Flow](/images/AgentFlow.webp)
 
 ---
 

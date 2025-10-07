@@ -21,7 +21,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/RedditN8NBanner.png"
+    image: "/images/RedditN8NBanner.webp"
     alt: "Image showing a cartoonish image about using a local RAG" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -37,7 +37,7 @@ This project demonstrates a scalable solution: an automated **n8n workflow** tha
 
 ## How It Works: From Data Chaos to Structured Insight
 
-![n8n and Reddit Workflow](/images/n8nWorkflow.png)
+![n8n and Reddit Workflow](/images/n8nWorkflow.webp)
 
 The system automates the entire intelligence-gathering pipeline, from raw posts to analyzed trends.
 

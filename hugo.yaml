@@ -61,7 +61,7 @@ params:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
     subtitle: Welcome to my portfolio! I am interested in finding and implementing practical A.I. and automation applications, that solve real business challenges. You will find here some of the projects that I have built.
-    imageUrl: /images/TarekProfile.png
+    imageUrl: /images/TarekProfile.webp
     imageWidth: 150
     imageHeight: 150
     imageTitle: Tarek Mustafa
