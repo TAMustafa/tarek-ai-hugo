@@ -1,17 +1,12 @@
 ---
 title: "Grafana monitoring"
 date: 2025-10-04
-# weight: 1
-# aliases: ["/first"]
 tags: ["CrewAI", "Prometheus", "Grafana", "FastAPI"]
 author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
 canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -21,16 +16,16 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
-    image: "/images/GrafanaCrewAIBanner.webp"
-    alt: "Image showing a cartoonish image about using a Prometheus + CrewAI"
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: false # only hide on current single page
+  image: "/images/GrafanaCrewAIBanner.webp"
+  alt: "Image showing a cartoonish image about using a Prometheus + CrewAI"
+  caption: "" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: false # only hide on current single page
 ---
 
 # AI enhanced monitoring - Grafana and CrewAI
 
-Monitoring systems have come a long way in helping teams keep an eye on infrastructure. Tools like **Prometheus**, **Grafana**, and **Alertmanager** do a great job of showing metrics, triggering alerts, and providing dashboards. But in many cases, alerts only tell us *that something is wrong*—not *why* it happened or *what to do next*.
+Monitoring systems have come a long way in helping teams keep an eye on infrastructure. Tools like **Prometheus**, **Grafana**, and **Alertmanager** do a great job of showing metrics, triggering alerts, and providing dashboards. But in many cases, alerts only tell us _that something is wrong_—not _why_ it happened or _what to do next_.
 
 To explore how AI could fill this gap, I built a small proof-of-concept that integrates **Prometheus, Alertmanager, Grafana, and CrewAI**. The idea: connect the traditional monitoring flow to AI agents that can help make sense of alerts in a more useful way and perform actions based on the alerts.
 
@@ -48,16 +43,16 @@ The prototype simulates the following flow. It’s a barebones setup, but it sho
 
 Prometheus and Grafana are great at:
 
-* Collecting and visualizing metrics
-* Sending alerts when thresholds are breached
-* Providing static dashboards and notifications
+- Collecting and visualizing metrics
+- Sending alerts when thresholds are breached
+- Providing static dashboards and notifications
 
 But they don’t cover things like:
 
-* Correlating an alert with recent deployments or log patterns
-* Understanding the potential business impact of downtime
-* Suggesting or even carrying out safe remediation steps
-* Learning from how similar incidents were resolved in the past
+- Correlating an alert with recent deployments or log patterns
+- Understanding the potential business impact of downtime
+- Suggesting or even carrying out safe remediation steps
+- Learning from how similar incidents were resolved in the past
 
 > That’s where AI can start to add value. Even small steps—like letting an agent query metrics over time or recall past incident reports—help turn raw alerts into more actionable insights.
 
@@ -67,8 +62,8 @@ But they don’t cover things like:
 
 For this experiment, I set up a couple of basic agents inside CrewAI:
 
-* **Alert Analyzer** – looks at alerts and tries to add context (severity, possible causes, recommended next steps).
-* **Incident Responder** – produces a simple report of what happened and what actions could be considered.
+- **Alert Analyzer** – looks at alerts and tries to add context (severity, possible causes, recommended next steps).
+- **Incident Responder** – produces a simple report of what happened and what actions could be considered.
 
 > This could be extended further with agents that check log data, compare incidents against historical patterns, or even carry out safe automated actions such as restarting a service.
 
@@ -78,9 +73,9 @@ For this experiment, I set up a couple of basic agents inside CrewAI:
 
 Putting this MVP together tought me a few things:
 
-* **Integration is key** – AI on its own isn’t useful unless it plugs into the workflows people already use.
-* **Start small** – even one or two simple tools (like querying historical metrics) can add meaningful context.
-* **Business impact matters** – the real value isn’t just fixing alerts faster, but reducing the impact downtime has on customers and operations.
+- **Integration is key** – AI on its own isn’t useful unless it plugs into the workflows people already use.
+- **Start small** – even one or two simple tools (like querying historical metrics) can add meaningful context.
+- **Business impact matters** – the real value isn’t just fixing alerts faster, but reducing the impact downtime has on customers and operations.
 
 ---
 
