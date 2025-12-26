@@ -20,8 +20,8 @@ services:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: tarek ai portfolio
-  description: Portfolio to show some of the projects that I have built.
-  keywords: [Tarek, Portfolio, AI, CrewAI, Langchain, LLM, FastAPI, Pyhton]
+  description: Portfolio to show some of the AI and Automation projects that I have built.
+  keywords: [Tarek, Portfolio, AI, Automation, Salesforce, Agentbuilder, LLM, FastAPI, Pyhton]
   author: Tarek Mustafa
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: January 2, 2006
@@ -60,7 +60,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
-    subtitle: Welcome to my portfolio! I am interested in finding and implementing practical A.I. and automation applications, that solve real business challenges. You will find here some of the projects that I have built.
+    subtitle: Hi, I’m glad you’re here! I’m an AI Agent Specialist who loves finding smart ways to use automation for real-world business tasks. This blog is where I share the projects I’ve been building and what I’ve learned along the way.
     imageUrl: /images/TarekProfile.webp
     imageWidth: 150
     imageHeight: 150
@@ -81,8 +81,8 @@ params:
       url: https://www.linkedin.com/in/tamustafa/
     - name: github
       url: https://github.com/TAMustafa?tab=repositories
-    - name: cv
-      url: https://drive.google.com/file/d/1vNd4AE9vzS7x_0mqkVB9A4YyKd2CXeJ8/view?usp=drive_link
+    # - name: cv
+    #   url: https://drive.google.com/file/d/1vNd4AE9vzS7x_0mqkVB9A4YyKd2CXeJ8/view?usp=drive_link
 
   analytics:
     google:

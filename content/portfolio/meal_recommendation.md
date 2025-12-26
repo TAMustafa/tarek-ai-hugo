@@ -1,6 +1,6 @@
 ---
 title: "Meal Recommendation"
-date: 2025-11-08
+date: 2025-11-09
 tags: ["Pandas", "sklearn", "Analysis"]
 author: "Tarek Mustafa"
 draft: false
@@ -17,7 +17,7 @@ ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
   image: "/images/MealRecommendationBanner.webp"
-  alt: "Image showing a cartoonish image about using a Prometheus + CrewAI"
+  alt: "Image showing a cartoonish image about a computer recommending a meal"
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
   hidden: false # only hide on current single page
