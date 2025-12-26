@@ -60,10 +60,10 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
-    subtitle: Hi, I’m glad you’re here! I’m an AI Agent Specialist who loves finding smart ways to use automation for real-world business tasks. This blog is where I share the projects I’ve been building and what I’ve learned along the way.
+    subtitle: Hi, I’m glad you’re here! I’m interested in AI Agents and Automation and finding smart ways to use them for real-world business tasks. This blog is where I share the projects I’ve been building and what I’ve learned along the way.
     imageUrl: /images/TarekProfile.webp
     imageWidth: 150
-    imageHeight: 150
+    imageHeight: 150  
     imageTitle: Tarek Mustafa
     buttons:
       - name: Portfolio

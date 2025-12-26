@@ -25,19 +25,19 @@ cover:
 
 # Lead data enhancement using Salesforce AI
 
-In order to get more hands on experience with Salesforce AI, I used the Developer Edition of Salesforce and built an automation that triggers when a new lead is created and uses the Agentforce to find and fill in the phone number, email, and website for that lead.
+In order to get more hands on experience with Salesforce, I used the developer edition and built an AI automation that triggers when a new lead is created. The automation uses Agentforce to find and fill in the phone number, email, and website for that lead.
 
 ---
 
 ## The Three Ingredients of the Automation
 
-### The Instructions (Flex Prompt Template)
-I wrote a prompt that tells the AI exactly what to do: "Here's a company name and location. Find their phone, email, and website. Give me the answer in a format I can use."
+### 1. The Instructions (Flex Prompt Template)
+To tell the AI what to do, I used a flex prompt template providing the company name and location and ask to provide the phone, email, and website in a JSON format.
 
 ![Flex Prompt Template](/images/FlexPromptTemplate.webp)
 
-### The Interpreter (APEX Class)
-The AI provides the retrieved data in a single string. In order to fill the fields with the correct data, I used **Google Gemini** to write an APEX Class that takes the JSON the AI provided and puts each piece in the right field.
+### 2. The Interpreter (APEX Class)
+The AI provides the retrieved data in a single string which is not useful for adding the records to Salesforce. In order sperate the JSON data and add it to the right fields, I used **Google Gemini** to write an APEX Class that does the job.
 
 ![APEX Class](/images/LeadAPEX.webp)
 
@@ -50,7 +50,7 @@ This is the behind-the-scenes manager that watches for new leads being created a
 
 ## How it Works in Salesforce
 
-Imagine a researcher creates a new Lead with only a company name and a city, leaving other fields empty and hits save.
+Imagine a researcher creates a new Lead with only a company name street and city, leaving other fields empty and hits **save**.
 
 Immediately, the system starts working:
 
@@ -69,15 +69,15 @@ By the time the page reloads, the information is there. No extra clicks, no manu
 ### What I Learned
 
 **Good enough beats perfect**
-The AI gets it right about 75% of the time. But even when it's slightly off, having something to start with beats staring at blank fields. I noticed that **company name** and **city** are most of the time enough for the AI to find the correct information.
+The AI gets it right about 75% of the time. But even when it's slightly off, having something to start with beats staring at blank fields.
 
 **Simple foundations scale easily**
-I started with just three fields to make it work. The next step is to add more information like e.g. social accounts, google rating and so on.
+In this example, I started with three fields to make it work. The next step is to add more information like e.g. social accounts, google rating and so on.
 
 ---
 
 ### The Bottom Line
 
-Work that used to be tedious becomes automatic and is easy to maintain and scale. This automation allows lead researchers to focus on interesting tasks instead of hunting for phone numbers, urls and emails.
+Work that used to be tedious becomes automatic and is easy to maintain and to scale. This automation allows lead researchers to focus on interesting tasks instead of hunting for phone numbers, urls and emails.
 
-That's the real value: Not AI doing everything, but AI taking care of the boring stuff.
+That's the real value: Not AI doing everything, but AI taking care of the boring things.
