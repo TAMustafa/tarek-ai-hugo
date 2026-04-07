@@ -1,7 +1,7 @@
 ---
-title: "Lead data enhancement"
+title: "Basic lead enrichment in Salesforce"
 date: 2025-12-26
-tags: ["Salesforce", "Agentforce", "Agentbuilder", "Automation"]
+tags: ["Salesforce", "Agentforce", "Agentbuilder", "Automation, Lead Enrichment"]
 author: "Tarek Mustafa"
 draft: false
 hidemeta: false
@@ -23,26 +23,26 @@ cover:
   hidden: false # only hide on current single page
 ---
 
-# Lead data enhancement using Salesforce AI
+# Using Automation for basic Lead enrichment in Salesforce
 
-In order to get more hands on experience with Salesforce, I used the developer edition and built an AI automation that triggers when a new lead is created. The automation uses Agentforce to find and fill in the phone number, email, and website for that lead.
+To gain more hands-on experience with Salesforce, I used a Developer Edition org to build an AI-driven automation that triggers whenever a new Lead is created. Using **Agentforce**, the system automatically finds and populates the **phone number, email, and website** for that lead.
 
 ---
 
 ## The Three Ingredients of the Automation
 
 ### 1. The Instructions (Flex Prompt Template)
-To tell the AI what to do, I used a flex prompt template providing the company name and location and ask to provide the phone, email, and website in a JSON format.
+To guide the AI, I created a **Flex Prompt Template**. It takes the company name and location as inputs and instructs the AI to return the corresponding phone number, email, and website in a clean JSON format.
 
 ![Flex Prompt Template](/images/FlexPromptTemplate.webp)
 
 ### 2. The Interpreter (APEX Class)
-The AI provides the retrieved data in a single string which is not useful for adding the records to Salesforce. In order sperate the JSON data and add it to the right fields, I used **Google Gemini** to write an APEX Class that does the job.
+The AI returns the retrieved data as a single string, which Salesforce cannot natively map to individual fields. To bridge this gap, I used **Google Gemini** to help write an **Apex Class** that parses the JSON string and assigns the data to the correct Lead fields.
 
 ![APEX Class](/images/LeadAPEX.webp)
 
 ### The Coordinator (Record Trigger Flow)
-This is the behind-the-scenes manager that watches for new leads being created and then triggers the prompt template, organizes the data and finally updates the lead record.
+This is the "behind-the-scenes" manager. It monitors the system for new Leads, triggers the prompt template, coordinates the data processing through the Apex class, and finally updates the Lead record.
 
 ![Record Trigger Flow](/images/LeadFlow.webp)
 
@@ -54,30 +54,30 @@ Imagine a researcher creates a new Lead with only a company name street and city
 
 Immediately, the system starts working:
 
-- **The Trigger**: Salesforce notices a new Lead has arrived.
-- **The Search**: The AI performs a web search based on the company name and city.
-- **The Delivery**: The AI returns its findings in a structured "JSON" format.
-- **The Update**: The Apex class sorts that data and fills in the empty fields.
-- **The Result**: The page reloads with the information filled in.
+- **The Trigger**: Salesforce detects the new Lead creation.
+- **The Search**: The AI performs a targeted web search based on the provided company name and location.
+- **The Delivery**: The AI returns its findings in a structured JSON format.
+- **The Update**: The Apex class parses that data and maps it to the empty fields.
+- **The Result**: The record is updated instantly.
 
-By the time the page reloads, the information is there. No extra clicks, no manual searching, and no copy-pasting from Google.
+By the time the page reloads, the additional information have been added to the Lead record. No extra clicks, no manual searching, and no copy-pasting from Google.
 
-![Process Flow](/images/LeadProcess.webp)
+![Enriched Lead](/images/SFLead.webp)
 
 ---
 
-### What I Learned
+### Key Takeaways
 
-**Good enough beats perfect**
-The AI gets it right about 75% of the time. But even when it's slightly off, having something to start with beats staring at blank fields.
+**Good Enough" Beats Perfect**
+The AI is accurate about 75% of the time. However, even when it isn't perfect, having a starting point is far more efficient than staring at blank fields and starting from scratch.
 
-**Simple foundations scale easily**
-In this example, I started with three fields to make it work. The next step is to add more information like e.g. social accounts, google rating and so on.
+**Simple Foundations Scale Easily**
+I started with three core fields to prove the concept. The beauty of this setup is that it can easily be expanded to include social media profiles, Google ratings, or industry descriptions.
 
 ---
 
 ### The Bottom Line
 
-Work that used to be tedious becomes automatic and is easy to maintain and to scale. This automation allows lead researchers to focus on interesting tasks instead of hunting for phone numbers, urls and emails.
+Tasks that were once tedious are now automatic, scalable, and easy to maintain. This automation allows researchers to focus on high-value strategy rather than hunting for phone numbers and URLs.
 
-That's the real value: Not AI doing everything, but AI taking care of the boring things.
+That is the real value of Agentforce: it isn't about AI doing everything, but about AI taking care of the *boring things*.
