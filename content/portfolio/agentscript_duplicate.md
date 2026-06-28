@@ -6,7 +6,6 @@ author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://canonical.url/to/page"
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -34,7 +33,7 @@ Instead of letting the agent guess, I connected it to deterministic Apex actions
 
 ---
 
-## What the Agent Can Do
+## What I Built
 
 The Lead Account Deduplication Agent supports three workflows:
 
@@ -52,7 +51,7 @@ This gives the seller a conversational interface, while still keeping the decisi
 
 ### 1. Agent Script Router
 
-The Agent Script starts by routing the user to the right subagent. If the user asks to scan Leads broadly, it moves into the duplicate scanner. If the user gives a Lead Id, it finds candidate Accounts. If the user provides both a Lead and Account, it performs a direct confidence assessment.
+The Agent Script starts by routing the user to the right subagent. If the user asks to scan Leads broadly, it moves into the duplicate scanner. If the user gives a Lead ID, it finds candidate Accounts. If the user provides both a Lead and Account, it performs a direct confidence assessment.
 
 The important part is that the agent is instructed not to claim certainty. It presents a confidence score, confidence band, supporting evidence, warnings, and the recommended next step.
 
@@ -82,13 +81,13 @@ Scores are capped at 100 and grouped into confidence bands:
 - **Medium:** 55-79
 - **Low:** 0-54
 
-This makes the result easy to understand. A seller does not just see "possible duplicate" they also see why the agent thinks so.
+This makes the result easy to understand. A seller does not just see "possible duplicate"; they also see why the agent thinks so.
 
 ---
 
 ## A Practical Example
 
-In the test data, I used a Lead for **Golden House** and an created an Account named **Goldenhouse**. A simple exact-name match would miss this because of the spacing difference. The scoring logic normalizes company names, checks phone numbers, and compares location fields.
+In the test data, I used a Lead for **Golden House** and created an Account named **Goldenhouse**. A simple exact-name match could miss this because of the spacing difference. The scoring logic normalizes company names, checks phone numbers, and compares location fields.
 
 ![Lead and Account view](/images/LeadAccount.webp)
 

@@ -6,7 +6,6 @@ author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://canonical.url/to/page"
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -23,53 +22,64 @@ cover:
   hidden: false # only hide on current single page
 ---
 
-# Enriching Salesforce Leads based on PlaceID
+# Enriching Salesforce Leads with Place IDs
 
-I built a Python-driven automation that enriches Salesforce leads using Place IDs as a stable, unique identifier for every business on Google Maps.
+I built a Python-driven automation that enriches Salesforce Leads using Google Place IDs as a stable identifier for businesses on Google Maps.
+
+The goal was to move beyond manual lead research. If a Lead already has a Place ID, the script can use that identifier to fetch structured business details and sync the useful fields back into Salesforce.
 
 ---
 
-## The Three Ingredients of the Automation
+## The Three Ingredients
 
 ### 1. Salesforce Lead Object Configuration
 
-To prepare Salesforce for this Lead enrichment, I added a few custom fields to the Lead object. This includes a custom PlaceID field to serve as our unique key, along with fields for Google Rating, Review Count and a few more. These fields provide the landing spot for the external data, ensuring it is structured and ready for sales reps to use.
+To prepare Salesforce for enrichment, I added custom fields to the Lead object. This included a Place ID field to serve as the lookup key, along with fields for Google rating, review count, website, and other useful business details.
+
+These fields give the external data a structured landing spot instead of leaving it buried in notes or spreadsheets.
 
 ![Lead record with custom fields](/images/LeadBeforeRun.webp)
 
 ### 2. Python & Google Maps API Integration
 
-The "engine" is a Python script that bridges the gap between Salesforce and Google Maps. The logic follows a specific pipeline
-- **Authentication**: Securely connecting to Salesforce using simple_salesforce.
-- **The Query**: Identifying leads that have a Place ID and not enriched yet.
-- **The Enrichment**: Calling the Google Maps API (via SerpAPI) to fetch business details for each of the fields.
+The engine is a Python script that connects Salesforce to Google Maps data through SerpAPI. The logic follows a simple pipeline:
+
+- **Authentication:** Connect to Salesforce using `simple_salesforce`.
+- **Query:** Find Leads that have a Place ID and still need enrichment.
+- **Enrichment:** Call SerpAPI to fetch business details for each Place ID.
+- **Mapping:** Convert API response fields into the Salesforce fields created for the project.
 
 ![Python File Image](/images/AutomationPython.webp)
 
 ### 3. Automated Update Logic
 
-The script doesn't just find data; it manages the lifecycle of the record. After fetching the details, the automation maps the API response (like rating, user_ratings_total and website) back to the corresponding Salesforce fields and executes a bulk update. This removes the need for manual data entry and ensures the CRM remains a "living" database.
+The script does not just find data; it manages the record update. After fetching details like rating, review count, and website, the automation maps the API response back to Salesforce and performs an update.
+
+That keeps the CRM closer to a living database instead of a static list of partially filled records.
 
 ---
 
-## How it Works in the Pipeline
+## How It Works in the Pipeline
 
-Once the Python script is executed in the Colab environment, the system performs the following:
-- **The Extraction**: The script pulls all leads from Salesforce that are marked for enrichment.
-- **The Transformation**: It parses the complex JSON response from Google, extracting only the most relevant business details.
-- **The Validation**: It checks if a website or rating exists before attempting to update, ensuring no "empty" data overwrites existing records.
-- **The Sync**: The processed data is pushed back to Salesforce, instantly appearing on the Lead's page for the sales team.
+Once the Python script runs in the Colab environment, it performs four steps:
+
+- **Extraction:** Pull Leads from Salesforce that are marked for enrichment.
+- **Transformation:** Parse the JSON response and extract the business details that matter.
+- **Validation:** Check whether fields like website or rating exist before updating, so empty values do not overwrite useful data.
+- **Sync:** Push the processed data back to Salesforce so it appears directly on the Lead page.
 
 ![Lead after enrichment](/images/LeadAfterRun.webp)
 
 ---
 
-### Key Takeaways
+## Key Takeaways
 
-By utilizing the Google Maps API via SerpAPI and the simple_salesforce library, the automation moves away from inconsistent manual inputs. This ensures cleaner records, more accurate data and provides sellers with immediate context on a lead's online presence without them ever leaving the CRM.
+Using SerpAPI and `simple_salesforce` makes the enrichment process repeatable. The most important design choice was using Place ID as the key, because names and addresses can be messy while Place IDs are much more stable.
+
+This gives sellers immediate context on a Lead's online presence without asking them to leave Salesforce and research everything manually.
 
 ---
 
-### The Bottom Line
+## The Bottom Line
 
-This setup transforms Salesforce from a static database into an active, context-rich participant in the sales process. By automating the basics with the right identifiers, we turn tedious "Lead Research" into an automated background process.
+This setup turns lead research into a background process. By combining Salesforce custom fields, Python, and a reliable external identifier, the CRM becomes more useful without adding extra manual work for the sales team.

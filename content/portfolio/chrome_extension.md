@@ -6,7 +6,6 @@ author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://canonical.url/to/page"
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -25,50 +24,50 @@ cover:
 
 # Resume Checker - Chrome Extension
 
-In today's competitive job market, it's difficult to know if your resume truly meets the needs of a specific job description. I built a Chrome extension to solve this pain point. This tool gives job seekers instant, actionable feedback by identifying exactly how well their provided resume matches a chosen job description in order to make improvements and increase their chances of landing an interview.
+In today's job market, it is difficult to know whether your resume really matches a specific job description. I built a Chrome extension to make that comparison faster and more practical.
+
+The tool gives job seekers immediate feedback by comparing their resume against a job description, highlighting matching keywords, missing keywords, and concrete improvement areas.
 
 ---
 
-## What It Does
+## What I Built
 
 ![Resume Checker Chrome Extension](/images/resumeChecker.webp)
 
-The Resume Checker provides a dual interface for flexibility:
-
-**Chrome Extension:** Analyze any job description directly from your browser. Simply paste your resume text and get immediate feedback without leaving the tab you're in.
+The Resume Checker lets users analyze a job description directly from the browser. They paste their resume text, run the check, and get feedback without leaving the page they are viewing.
 
 The system provides a clear, visual breakdown, including:
 
-- **Compatibility Score:** A precise score (0-100) rating your resume's alignment with the job description.
-- **Match & Missing Keywords:** Highlights the skills and experience that align perfectly, as well as critical keywords you're missing.
-- **Improvement Suggestions:** Data-driven recommendations on how to bridge the gaps identified in your resume.
+- **Compatibility score:** A 0-100 score estimating how closely the resume aligns with the job description.
+- **Matched and missing keywords:** Skills and requirements that appear in the resume, plus important terms that are missing.
+- **Improvement suggestions:** Practical recommendations for closing the gaps.
 
-> **Instant Insight** A strategic, data-backed method for resume tailoring. Stop guessing what the job requires—get instant insights into how well your CV matches the job description in seconds.
+The point is not to let AI rewrite the resume blindly. The point is to show the candidate where the gaps are so they can tailor their application more intentionally.
 
 ---
 
 ## Technical Deep Dive
 
-### **Frontend & Interfaces**
+### Frontend
 
-- **Chrome Extension:** Built with **Vanilla JavaScript, HTML, & CSS** using **Manifest V3** for modern security and performance.
+- **Chrome Extension:** Built with **vanilla JavaScript, HTML, and CSS** using **Manifest V3**.
 
-### **Backend API & AI Core**
+### Backend API and AI Core
 
 - **Framework:** **FastAPI (Python)** to serve high-performance, auto-documented endpoints with built-in validation.
-- **AI:** Leverages **pydantic-ai multi agents** to perform a intelligent similarity analysis between the resume and job description.
-- **Performance & Security:** Implements **caching** for a faster user experience and secure file upload handling for PDF processing.
+- **AI:** Uses **pydantic-ai** agents to compare the resume and job description and return structured feedback.
+- **Performance and handling:** Includes caching for repeated checks and upload handling for PDF processing.
 
-### **Deployment**
+### Deployment
 
-- **Containerization:** The entire application is **packaged with Docker** for consistent environments and easy deployment.
+- **Containerization:** The application is packaged with **Docker** for consistent local and deployment environments.
 
 ---
 
 ## Project Motivation: Built from Experience
 
-The idea for this tool wasn't born in a vacuum, it came from my own job search. Like many candidates, I spent hours trying to manually adjust my CV for every new job description, essentially guessing what skills and keywords mattered most. I realized there had to be a better way to increase my chances of landing an interview.
+The idea for this tool came from my own job search. Like many candidates, I spent hours adjusting my CV for every new job description and guessing which skills or keywords mattered most.
 
-I wanted instant, concrete insight into how well my resume actually aligned with a job's requirements. This tool transforms the manual, tedious process of tailoring a CV into a quick, data-backed step, giving every job seeker the power to immediately see and fix the gaps between their experience and the role they want. It’s a solution built by a job seeker, for job seekers.
+I wanted instant, concrete insight into how well my resume actually aligned with a role. This tool turns the manual process of tailoring a CV into a quick review step, helping job seekers see and fix the gaps between their experience and the role they want.
 
-> If you are interested, here is the github link to the [Resume Checker](https://github.com/TAMustafa/ResumeCheckerAPI)
+> If you are interested, here is the GitHub link to the [Resume Checker](https://github.com/TAMustafa/ResumeCheckerAPI).

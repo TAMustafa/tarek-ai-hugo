@@ -1,12 +1,11 @@
 ---
-title: "n8n automation"
+title: "Reddit Insight Automation with n8n"
 date: 2025-09-28
 tags: ["n8n", "Anthropic", "Reddit", "Automation"]
 author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://canonical.url/to/page"
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -17,52 +16,54 @@ ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 cover:
   image: "/images/RedditN8NBanner.webp"
-  alt: "Image showing a cartoonish image about using a local RAG" # alt text
+  alt: "Image showing an n8n workflow for finding fintech issues on Reddit" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
   hidden: false # only hide on current single page
 ---
 
-# n8n Workflow to find Fintech issues reported on Reddit
+# Finding Fintech Issues on Reddit with n8n
 
-In the fast-paced world of financial services, critical user insights and emerging issues are often buried in scattered community discussions across Reddit and other forums. Manually tracking these conversations is time-consuming.
-This project demonstrates a scalable solution: an automated **n8n workflow** that continuously scans key financial subreddits, uses AI to extract user-reported issues, and delivers summarized, actionable insights directly to **google sheets**.
+In financial services, useful customer signals are often buried inside community discussions. People talk about payment issues, banking frustrations, failed onboarding, app bugs, and support problems long before those signals show up in a formal report.
+
+For this project, I built an automated **n8n workflow** that scans finance-related subreddits, filters for relevant posts, uses AI to summarize the issue, and sends the results to **Google Sheets**.
 
 ---
 
-## How It Works: From Data Chaos to Structured Insight
+## How It Works
 
 ![n8n and Reddit Workflow](/images/n8nWorkflow.webp)
 
-The system automates the entire intelligence-gathering pipeline, from raw posts to analyzed trends.
+The system automates the pipeline from raw Reddit posts to a structured list of user-reported issues.
 
-1.  **Multi-Source Data Collection**
-    The workflow simultaneously queries multiple finance-focused subreddits to capture a broad market view:
+### 1. Multi-Source Data Collection
 
-    - **r/FinTech** for innovative financial technology insights and pain points.
-    - **r/Banking** for traditional banking challenges and customer feedback.
-    - **r/PaymentProcessing** for specific operational and technical issues.
+The workflow queries multiple finance-focused subreddits to capture a broader market view:
 
-2.  **Intelligent Data Processing**
-    The raw data is cleaned and refined for analysis:
-    - **Merge & Deduplicate:** Combines results from all sources and removes duplicate posts.
-    - **Relevance Filtering:** Applies smart filters to focus only on the most valuable content.
+- **r/FinTech:** Financial technology discussions and product pain points.
+- **r/Banking:** Traditional banking challenges and customer feedback.
+- **r/PaymentProcessing:** More specific payment and operational issues.
 
-> The workflow filters for posts from the last 72 hours that contain keywords like "issue," "problem," or "solution," ensuring the analysis focuses on actionable discussions.
+### 2. Filtering and Deduplication
 
-3.  **AI-Powered Analysis & Summarization**
-    Each filtered post is sent to **Anthropic's Claude model** for deep analysis, where it:
+The raw data is cleaned before it reaches the AI step:
 
-    - Assesses the overall relevance and urgency.
-    - Extracts the core problem and any proposed solutions.
-    - Generates a concise, actionable summary.
-    - Helps detect emerging trends across multiple discussions.
+- **Merge and deduplicate:** Combine results from all sources and remove duplicate posts.
+- **Relevance filtering:** Keep recent posts that contain terms like "issue," "problem," or "solution."
+- **Time window:** Focus on the last 72 hours so the output stays current.
 
-4.  **Structured Output & Storage**
-    The final, AI-processed insights are formatted using n8n’s output parser and automatically appended to a **Google Sheet**, creating:
-    - A clean, searchable database of user-reported pain points.
-    - An easily shareable resource for product, support, and strategy teams.
-    - A growing historical knowledge base for trend analysis.
+### 3. AI-Powered Analysis
+
+Each filtered post is sent to **Anthropic Claude** for analysis. The prompt asks the model to:
+
+- Assess relevance and urgency.
+- Extract the core problem.
+- Capture any suggested solution.
+- Generate a short, actionable summary.
+
+### 4. Structured Output
+
+The final insights are formatted with n8n's output parser and appended to a **Google Sheet**. This creates a clean and searchable list of pain points that can be shared with product, support, or strategy teams.
 
 ---
 
@@ -70,21 +71,25 @@ The system automates the entire intelligence-gathering pipeline, from raw posts 
 
 **Automation & Orchestration**
 
-- **n8n:** Serves as the core workflow engine, orchestrating the entire pipeline.
+- **n8n:** Serves as the core workflow engine and orchestrates the pipeline.
 
 **Data Sources & AI**
 
-- **Reddit API:** Provides direct access to real-time discussions from targeted subreddits.
-- **Anthropic Claude:** Delivers advanced natural language understanding to distill complex posts into clear insights.
+- **Reddit API:** Provides access to discussions from targeted subreddits.
+- **Anthropic Claude:** Turns long posts into structured summaries and issue labels.
 
 **Storage & Output**
 
-- **Google Sheets:** Acts as the persistent storage layer, offering a familiar and collaborative interface for end-users to access the results.
+- **Google Sheets:** Acts as the storage layer and gives non-technical users an easy way to review the results.
 
 ---
 
-## Strategic Impact
+## Key Takeaways
 
-- **Product & Market Intelligence:** Provides a systematic way to discover common user frustrations, feature requests, and unmet needs in the market.
-- **Efficiency & Scale:** Automates a previously manual and tedious process, freeing up human analysts for more important tasks.
-- **Proactive Problem-Solving:** Allows companies to identify and respond to emerging issues before they become widespread, improving customer satisfaction and retention.
+- **Product intelligence:** The workflow provides a repeatable way to discover user frustrations and feature requests.
+- **Efficiency:** Analysts no longer need to manually scan several communities every day.
+- **Early signal detection:** Repeated complaints can surface before they become larger support or product issues.
+
+## The Bottom Line
+
+This workflow turns public community discussion into structured research. It is not a replacement for direct customer feedback, but it is a useful early-warning layer for fintech product and support teams.

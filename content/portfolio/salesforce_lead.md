@@ -1,12 +1,11 @@
 ---
-title: "Basic lead enrichment in Salesforce"
+title: "Basic Lead Enrichment in Salesforce"
 date: 2025-12-26
-tags: ["Salesforce", "Agentforce", "Agentbuilder", "Automation, Lead Enrichment"]
+tags: ["Salesforce", "Agentforce", "Agent Builder", "Automation", "Lead Enrichment"]
 author: "Tarek Mustafa"
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://canonical.url/to/page"
 hideSummary: false
 searchHidden: true
 ShowReadingTime: false
@@ -23,61 +22,61 @@ cover:
   hidden: false # only hide on current single page
 ---
 
-# Using Automation for basic Lead enrichment in Salesforce
+# Basic Lead Enrichment in Salesforce with Agentforce
 
-To gain more hands-on experience with Salesforce, I used a Developer Edition org to build an AI-driven automation that triggers whenever a new Lead is created. Using **Agentforce**, the system automatically finds and populates the **phone number, email, and website** for that lead.
+To get more hands-on experience with Salesforce automation, I used a Developer Edition org to build a basic AI-assisted lead enrichment flow. When a new Lead is created with limited company information, the automation uses **Agentforce** to look for missing contact details and then updates the Lead record.
+
+The goal was simple: reduce manual research for fields like **phone number**, **email**, and **website**, while still keeping the setup easy to inspect and improve.
 
 ---
 
-## The Three Ingredients of the Automation
+## The Three Ingredients
 
 ### 1. The Instructions (Flex Prompt Template)
-To guide the AI, I created a **Flex Prompt Template**. It takes the company name and location as inputs and instructs the AI to return the corresponding phone number, email, and website in a clean JSON format.
+To guide the AI, I created a **Flex Prompt Template**. It takes the company name and location as inputs and asks the model to return the best available phone number, email, and website in a clean JSON format.
 
 ![Flex Prompt Template](/images/FlexPromptTemplate.webp)
 
-### 2. The Interpreter (APEX Class)
-The AI returns the retrieved data as a single string, which Salesforce cannot natively map to individual fields. To bridge this gap, I used **Google Gemini** to help write an **Apex Class** that parses the JSON string and assigns the data to the correct Lead fields.
+### 2. The Interpreter (Apex Class)
+The AI response comes back as structured text, but Salesforce still needs to map each value to the right field. I used **Google Gemini** to help draft an **Apex class** that parses the JSON response and assigns the data to the correct Lead fields.
 
 ![APEX Class](/images/LeadAPEX.webp)
 
-### The Coordinator (Record Trigger Flow)
-This is the "behind-the-scenes" manager. It monitors the system for new Leads, triggers the prompt template, coordinates the data processing through the Apex class, and finally updates the Lead record.
+### 3. The Coordinator (Record-Triggered Flow)
+The Record-Triggered Flow coordinates the process. It runs when a new Lead is created, calls the prompt template, passes the response to the Apex parser, and updates the Lead record.
 
 ![Record Trigger Flow](/images/LeadFlow.webp)
 
 ---
 
-## How it Works in Salesforce
+## How It Works in Salesforce
 
-Imagine a researcher creates a new Lead with only a company name street and city, leaving other fields empty and hits **save**.
+Imagine a researcher creates a new Lead with only a company name, street, and city, then clicks **Save**.
 
 Immediately, the system starts working:
 
-- **The Trigger**: Salesforce detects the new Lead creation.
-- **The Search**: The AI performs a targeted web search based on the provided company name and location.
-- **The Delivery**: The AI returns its findings in a structured JSON format.
-- **The Update**: The Apex class parses that data and maps it to the empty fields.
-- **The Result**: The record is updated instantly.
+- **The trigger:** Salesforce detects the new Lead.
+- **The search:** Agentforce searches for the missing company details based on the provided name and location.
+- **The response:** The AI returns its findings in a structured JSON format.
+- **The update:** The Apex class parses the response and maps the values to Lead fields.
+- **The result:** The Lead record is enriched without manual copy-pasting.
 
-By the time the page reloads, the additional information have been added to the Lead record. No extra clicks, no manual searching, and no copy-pasting from Google.
+By the time the flow finishes, the additional information has been added to the Lead record. No extra clicks, no manual searching, and no copying details from Google.
 
 ![Enriched Lead](/images/SFLead.webp)
 
 ---
 
-### Key Takeaways
+## Key Takeaways
 
-**Good Enough" Beats Perfect**
-The AI is accurate about 75% of the time. However, even when it isn't perfect, having a starting point is far more efficient than staring at blank fields and starting from scratch.
+**Good enough beats blank fields:** The AI is not perfect, but even a useful starting point can save time compared with researching every field from scratch.
 
-**Simple Foundations Scale Easily**
-I started with three core fields to prove the concept. The beauty of this setup is that it can easily be expanded to include social media profiles, Google ratings, or industry descriptions.
+**Simple foundations scale easily:** I started with three core fields to prove the concept. The same pattern could be expanded to include social profiles, ratings, or short industry descriptions.
 
 ---
 
-### The Bottom Line
+## The Bottom Line
 
-Tasks that were once tedious are now automatic, scalable, and easy to maintain. This automation allows researchers to focus on high-value strategy rather than hunting for phone numbers and URLs.
+This automation turns a repetitive research task into a background process. It does not remove the need for review, but it gives sales and research teams a faster starting point.
 
-That is the real value of Agentforce: it isn't about AI doing everything, but about AI taking care of the *boring things*.
+That is the real value of Agentforce here: not AI doing everything, but AI taking care of the boring first pass.
