@@ -21,7 +21,18 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: tarek ai portfolio
   description: Portfolio to show some of the AI and Automation projects that I have built.
-  keywords: [Tarek, Portfolio, AI, Automation, Salesforce, Agentbuilder, LLM, FastAPI, Pyhton]
+  keywords:
+    [
+      Tarek,
+      Portfolio,
+      AI,
+      Automation,
+      Salesforce,
+      Agentbuilder,
+      LLM,
+      FastAPI,
+      Pyhton,
+    ]
   author: Tarek Mustafa
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: January 2, 2006
@@ -60,10 +71,10 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 👋 Hello, I'm Tarek
-    subtitle: Welcome! I’m interested in AI Agents and automation, specifically finding smart ways to use them for real-world business. This blog is where I share some of the projects I’ve built and the lessons I’ve learned along the way.
+    subtitle: Welcome! I’m interested in AI Agents and automation, specifically finding ways to use them for real-world applications. This blog is where I share some of the projects I’ve built and lessons learned along the way.
     imageUrl: /images/TarekProfile.webp
     imageWidth: 150
-    imageHeight: 150  
+    imageHeight: 150
     imageTitle: Tarek Mustafa
     buttons:
       - name: Portfolio

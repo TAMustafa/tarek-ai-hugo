@@ -238,3 +238,5 @@ Fast-fail avoids unnecessary LLM calls when deterministic checks already fail.
 - **Don't use LLMs for things Python can check.** Keep business rules deterministic.
 - **Fail fast.** Skip expensive semantic evaluations when basic validation already fails.
 - **Test more than the final answer.** For AI agents, the execution trace, tool calls, decisions, and retrieved context can all become part of the evaluation.
+
+> If you are interested, here is the GitHub link to the [Agent Eval](https://github.com/TAMustafa/agent-eval-harness).
